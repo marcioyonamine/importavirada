@@ -1,4 +1,18 @@
 // verifica se está na base
 
-seleciona todos os cnpjs da tabela googleforms_evento
-compara os cnpjs da tabela sis_pessoa_juridica 
+seleciona todos os cnpjs da tabela googleforms_evento //pj
+    retira espaços e caracteres só deixando números
+    compara os cnpjs da tabela sis_pessoa_juridica 
+      se forem iguais
+        colocar os dados da tabela googleforms_evento no campo obs
+      se não forem iguais
+         inserir os dados da tabela googleforms_evento
+ 
+ seleciona todos os cpfs que possuem cnpj em branco da tabela googleforms_evento //pj
+    retira espaços e caracteres só deixando números
+    compara os cnpjs da tabela sis_pessoa_juridica 
+      se forem iguais
+        colocar os dados da tabela googleforms_evento no campo obs
+      se não forem iguais
+         inserir os dados da tabela googleforms_evento
+
