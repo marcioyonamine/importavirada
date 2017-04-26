@@ -1,4 +1,4 @@
-// verifica se está na base
+// verifica se o contratado está na base
 
 seleciona todos os cnpjs da tabela googleforms_evento //pj
     retira espaços e caracteres só deixando números
@@ -8,11 +8,43 @@ seleciona todos os cnpjs da tabela googleforms_evento //pj
       se não forem iguais
          inserir os dados da tabela googleforms_evento
  
- seleciona todos os cpfs que possuem cnpj em branco da tabela googleforms_evento //pj
+ seleciona todos os cpfs que possuem cnpj em branco da tabela googleforms_evento //pf
     retira espaços e caracteres só deixando números
-    compara os cnpjs da tabela sis_pessoa_juridica 
+    compara os cpfs da tabela sis_pessoa_fisica
       se forem iguais
         colocar os dados da tabela googleforms_evento no campo obs
       se não forem iguais
          inserir os dados da tabela googleforms_evento
+         
+ seleciona todos os cpfs dos representantes de pj da tabela googleforms_evento //pf
+    retira espaços e caracteres só deixando números
+    compara os cpfs da tabela sis_representante_legal
+      se forem iguais
+        colocar os dados da tabela googleforms_evento no campo obs
+      se não forem iguais
+         inserir os dados da tabela googleforms_evento
+         
 
+
+// insere o evento e o pedido de contratação
+
+seleciona todos os eventos da tabela googleforms_evento
+    insere na tabela ig_evento
+    pega o id do evento e insere o produtor na tabela ig_producao
+    pega o id e insere pedido de contratacao na tabela igsis_pedido_de contratacao
+        verifica se é pj ou pf
+            se pj pega o id na tabela sis_pessoa_juridica
+                 insere no pedido de contratacao
+                 pega o cpf do representante da pessoa fisica e procura na tabela sis_representante_legal
+                     insere no pedido de contratacao
+            se pf pega o id na tabela sis_pessoa_fisica
+                 insere no pedido de contratacao
+    atualiza dados comuns da virada (tipo de recurso, etc)
+    
+    
+    /*
+    a inserção de valores, ocorrências e anexos deve acontecer manualmente
+    
+    */
+            
+            
