@@ -1,0 +1,4 @@
+// verifica se está na base
+
+seleciona todos os cnpjs da tabela googleforms_evento
+compara os cnpjs da tabela sis_pessoa_juridica 
